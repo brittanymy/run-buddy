@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: tomato;
+}
+
+body {
+    /* more on this crazy alphanumerical value in a minute! */
+    color: #39a6b2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* apply styles to <header> */
+header {
+    padding: 20px 35px;
+    background-color: #39a6b2;
+}

@@ -231,6 +231,7 @@ footer a {
 }
 
 /* REACH OUT STYLE STARTS */
+
 .contact {
     background-color: #024e76;
     text-align: center;
@@ -238,15 +239,6 @@ footer a {
 
 .contact h2 {
     color: #fce138;
-}
-
-.section-title {
-    font-size: 55px;
-    display: inline-block;
-    padding: 0 100px 20px 100px;
-    border-bottom: 3px solid;
-    margin-bottom: 35px;
-    color: #024e76;
 }
 
 .contact-info iframe {
@@ -263,4 +255,21 @@ footer a {
     color: white;
 }
 
+.contact-info h3 {
+    color: #fce138;
+    font-size: 32px;
+}
+
+.contact-info p, .contact-info address {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.contact-info a {
+    color: #fce138;
+}
+
+/* REACH OUT STYLE ENDS */
 

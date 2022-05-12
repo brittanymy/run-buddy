@@ -1,27 +1,49 @@
-// current date format
-$('#currentDay').text(moment().format('dddd, MMMM Do'))
+// Current date format
+$('#currentDay').text(moment().format('dddd, MMMM Do'));
 
-// save button 
-$(".saveBtn").on("click",function(){
-    var text= $(this).siblings('.description').val();
-    var time= $(this).parent().attr("id")
-    localStorage.setItem(time, text)
+// Save button function
+$('.saveBtn').on('click', function() {
+
+    // Collects sibling and child elements from HTML
+    let text = $(this).siblings('.description').val();
+    let time = $(this).parent().attr('id');
+
+    // Saves to local storage
+    localStorage.setItem(time, text);
 })
 
-// save to local storage
-$("#9 .description").val(localStorage.getItem("9"))
-$("#10 .description").val(localStorage.getItem("10"))
-$("#11 .description").val(localStorage.getItem("11"))
-$("#12 .description").val(localStorage.getItem("12"))
-$("#13 .description").val(localStorage.getItem("13"))
-$("#14 .description").val(localStorage.getItem("14"))
-$("#15 .description").val(localStorage.getItem("15"))
-$("#16 .description").val(localStorage.getItem("16"))
-$("#17 .description").val(localStorage.getItem("17"))
+// Color code function
+function timeExpression () {
+    let currentTime = moment().hour();
 
-// color code function
-// if, else, else if to set colors 
-// current hour red
-// past grey
-// future green
+    $('.time-block').each(function () {
+        let timeBlock = parseInt($(this).attr('id').split('hour')[1]);
 
+        if (timeBlock < currentTime) {
+            $(this).remove('future');
+            $(this).remove('present');
+            $(this).add('past');
+        } 
+        else if (timeBlock === currentTime) {
+            $(this).remove('past');
+            $(this).remove('future');
+            $(this).add('present');
+        } 
+        else {
+            $(this).remove('present');
+            $(this).remove('past');
+            $(this).add('future');
+        }   
+    })
+}
+
+// Grabs item from local storage
+$('#9am .description').val(localStorage.getItem('9am'));
+$('#10am .description').val(localStorage.getItem('10am'));
+$('#11am .description').val(localStorage.getItem('11am'));
+$('#12pm .description').val(localStorage.getItem('12pm'));
+$('#13pm .description').val(localStorage.getItem('13pm'));
+$('#14pm .description').val(localStorage.getItem('14pm'));
+$('#15pm .description').val(localStorage.getItem('15pm'));
+$('#16pm .description').val(localStorage.getItem('16pm'));
+$('#17pm .description').val(localStorage.getItem('17pm'));
